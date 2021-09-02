@@ -1,0 +1,38 @@
+﻿<ContentDialog
+    x:Class="SignalBox.Client.Windows.Views.Dialogs.DebugSignalDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SignalBox.Client.Windows.Views.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    CloseButtonText="Schließen">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock x:Name="stateTextBlock" Text="-" Margin="5"/>
+            <StackPanel Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </StackPanel.Resources>
+            <Button x:Name="Hp0Button" Content="HP0/00" Click="Hp0ClickedAsync" />
+            <Button x:Name="Hp1Button" Content="HP1" Click="Hp1ClickedAsync" />
+            <Button x:Name="Hp2Button" Content="HP2" Click="Hp2ClickedAsync" />
+            <Button x:Name="Sh1Button" Content="SH1" Click="Sh1ClickedAsync" />
+            <Button x:Name="CodeLightButton" Content="Zusatzlicht An" Click="DSCodeLightClickedAsync" />
+        </StackPanel>
+        <StackPanel x:Name="DistantSignalPanel" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </StackPanel.Resources>
+            <Button x:Name="DSOffButton" Content="Vorsignal dunkel" Click="DistantOffClickedAsync" />
+            <Button x:Name="Vr0Button" Content="Vr0" Click="Vr0ClickedAsync" />
+            <Button x:Name="Vr1Button" Content="Vr1" Click="Vr1ClickedAsync" />
+            <Button x:Name="Vr2Button" Content="Vr2" Click="Vr2ClickedAsync" />
+            <Button x:Name="DSCodeLightButton" Content="Zusatzlicht An" Click="DSCodeLightClickedAsync" />
+        </StackPanel>
+    </StackPanel>
+</ContentDialog>

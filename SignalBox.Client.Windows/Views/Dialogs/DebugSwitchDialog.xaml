@@ -1,0 +1,33 @@
+﻿<ContentDialog
+    x:Class="SignalBox.Client.Windows.Views.Dialogs.DebugSwitchDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SignalBox.Client.Windows.Views.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    CloseButtonText="Schließen">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock x:Name="stateTextBlock" Text="-" Margin="5"/>
+            <StackPanel Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </StackPanel.Resources>
+            <Button x:Name="ToggleButton" Content="Stellen" Click="ToggleClickedAsync" />
+        </StackPanel>
+        <StackPanel x:Name="DistantSignalPanel" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </StackPanel.Resources>
+            <Button x:Name="FreeButton" Content="Frei" Click="FreeClickedAsync" />
+            <Button x:Name="AllocatingButton" Content="Umlaufend" Click="AllocatingClickedAsync" />
+            <Button x:Name="AllocatedButton" Content="Reserviert" Click="AllocatedClickedAsync" />
+            <Button x:Name="BlockedButton" Content="Belegt" Click="BlockedClickedAsync" />
+        </StackPanel>
+    </StackPanel>
+</ContentDialog>
